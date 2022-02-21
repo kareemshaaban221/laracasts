@@ -1,0 +1,18 @@
+<?php
+
+class QueryBuilder{
+
+    protected $pdo;
+
+    function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+
+    function selectAll($table){
+        $statement = $this->pdo->prepare("SELECT * FROM $table");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+}
