@@ -1,5 +1,8 @@
 <?php
 
+
+require_once "../vendor/autoload.php";
+
 require '../functions/functions.php';
 require '../core/bootstrap.php';
 

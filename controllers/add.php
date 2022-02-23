@@ -4,7 +4,7 @@
 if (Request::method() === 'GET') {
     index();
 } else {
-    store($app, $_POST);
+    store(App::get('database'), $_POST);
 }
 
 
@@ -13,12 +13,12 @@ function index() {
     require '../core/render.php';
 }
 
-function store($app, $data) {
+function store($db, $data) {
     // connect db and store
 
     $values = $data;
     $values['vip'] = isset($values['vip']) ? 1 : 0; 
-    $app['database']->insert('users', $values);
+    $db->insert('users', $values);
 
     // index controller
     require 'index.php';
