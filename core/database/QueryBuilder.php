@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Core\Models;
+
+use App\Core\Request;
+use PDO;
+
 class QueryBuilder{
 
     protected $pdo;
@@ -15,12 +20,14 @@ class QueryBuilder{
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    function insert($table, $values){
+    function insert($table, Request $values){
 
         // my code before watching video 20
         // $last = array_pop($values);
         // $values = "'" . implode("', '", $values) . "', $last";
         // $q = "INSERT INTO $table(fname, lname, email, `password`, vip) VALUES($values)";
+
+        $values = $values->getRequest();
 
         $cols = array_keys($values);
         $q = sprintf(

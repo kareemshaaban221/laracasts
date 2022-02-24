@@ -1,5 +1,8 @@
 <?php
 
+use App\Core\App;
+use App\Core\Models\{Connection, QueryBuilder};
+
 // autoloader replace them ----------
 // require 'Router.php';
 // require 'Request.php';

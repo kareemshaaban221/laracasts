@@ -2,7 +2,7 @@
 <!-- content -->
 
 <div class="container m-auto w-50">
-    <form action="/add" method="POST">
+    <form action="/users" method="POST">
         <fieldset class="border border-dark rounded">
 
             <legend class="w-auto m-2 p-2">Add user</legend>
